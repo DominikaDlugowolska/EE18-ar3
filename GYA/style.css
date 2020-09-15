@@ -1,0 +1,64 @@
+body {
+    width: auto;
+    height: auto;
+}
+header{
+    height: 400px;
+    background: purple;
+    display: flex;
+    flex-direction: column;
+}
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 30px;
+}
+header .textbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    
+}
+header .textbox div{
+    border: white 3px solid;
+    padding: 15px 30px 15px 30px;
+    color: white;
+}
+main{
+    height: 500px;
+}
+.container-bottom{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 100%;
+    background: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+main .vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .vertical h1{
+    font-size: 50px;
+}
+main .news-box{
+    box-sizing: border-box;
+    height: 100%;
+    width: 30%;
+    background: rgb(214, 214, 214);
+    padding: 20px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.356);
+}
+main .news-box h2{
+    color: white;
+    text-align: center;
+}
+.containter-bottom{
+
+background-image: linear-gradient(-45deg,#dd0890 0,indigo 100%);
+}
