@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontaktformulär</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kontaktformulär</h1>
+        <form action="./uppgift-2-2.php" method="POST">
+            <label for="namn">Ange lånebelopp</label>
+            <input id="namn" class="form-control" type="text" name="belopp">
+            <label for="epost">Ange ränta i %</label>
+            <input id="epost" class="form-control" type="text" name="ränta">
+            
+
+            <label>Ange lånetid</label>
+            <div>
+                <input type="radio" name="lånetid" value="1" checked> 1 år
+                <input type="radio" name="lånetid" value="3"> 3 år
+                <input type="radio" name="lånetid" value="5"> 5 år
+            </div>
+
+            <button type="submit" class="btn btn-primary">Räkna ut</button>
+        </form>
+    </div>
+</body>
+</html>
