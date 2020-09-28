@@ -51,7 +51,7 @@ Skapa ett skript som frågar användaren hur många poäng hen fick på detta pr
              elseif ($poäng < 55) {
                     echo "<p>Ditt betyg är B</p>";
             } 
-             elseif ($poäng > 54) {
+             else {
                     echo "<p>Ditt betyg är A</p>";
             } 
 
