@@ -3,7 +3,7 @@ body {
     height: auto;
 }
 header{
-    height: 400px;
+    height: 100px;
     background: purple;
     display: flex;
     flex-direction: column;
@@ -14,18 +14,29 @@ header .nav{
     color: white;
     padding: 30px;
 }
-header .textbox{
+header .nav ul li{
+    display: inline;
+  font-size: 23px;
+  color: #fff;
+  text-align: right;
+  padding: 8px;
+}
+ .textbox{
+     height: 80%;
+    background: purple;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4%;
+    
     
 }
-header .textbox div{
+ .textbox div{
     border: white 3px solid;
     padding: 15px 30px 15px 30px;
     color: white;
 }
+
+
 main{
     height: 500px;
 }
