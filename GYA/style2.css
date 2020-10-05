@@ -62,7 +62,6 @@ header ul li {
     padding: 0 10px;
 }
 
-
  header .meny {
     padding: 0 10px 10px 10px;
     margin-top: auto;
@@ -81,10 +80,6 @@ h1 {
     font-size: 50px;
     color: white;
     text-align: center;
-}
-
-.nti {
-    display: block;
 }
 
 .info {
