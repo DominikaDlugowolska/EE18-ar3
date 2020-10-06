@@ -17,11 +17,8 @@
                 <a href="index.html">
                     <li>Startsida</li>
                 </a>
-                <a href="kontakt.html">
-                    <li>Kontakt</li>
-                </a>
                 <a href="elev.html">
-                    <li>Elev</li>
+                    <li>Min sida</li>
                 </a>
                 <a href="larare.html">
                     <li>Lärare</li>
@@ -75,6 +72,11 @@
                 utlånet.</p>
         </div>
 
+        <div class="parallax">
+            <img class="scroll" data-rate="-0.3" src="./bilder/book.png" alt="">
+            <img class="scroll" data-rate="-0.3" src="./bilder/book.png" alt="">
+        </div>
+
         <div style="width: 50%;" class="box">
             <div class="box-two">
                 <div>
@@ -88,5 +90,25 @@
             </div>
         </div>
     </main>
+    <script>
+        /* element vi använder */
+        const eTargets = document.querySelectorAll(".scroll"); //är en lista på element, vi kallar listan för eTargets
+
+        /* lyssna på om man skrollar (scroll-hämdelsen) */
+        window.addEventListener("scroll", function(e) {
+        
+            /* Förflytta alla element: en efter en i en loop */
+            eTargets.forEach(function(element) {
+                /* läs av data-rate för element */
+                var rate = element.dataset.rate;
+                /* räkna en förflyttning */
+                var distance = window.pageYOffset * rate;
+
+                /* Flytta elementet */
+                element.style.transform = "translateY(" + distance + "px)";
+            });
+
+        });
+    </script>
 </body>
 </html>

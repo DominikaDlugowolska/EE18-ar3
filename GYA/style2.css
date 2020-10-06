@@ -29,6 +29,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 15px;
+    margin-bottom: 50px;
 }
 
 .container-bottom {
@@ -91,13 +92,14 @@ h1 {
     border-radius: 15px;
     box-shadow: 5px 5px 5px 5px rgb(183, 182, 184);
     height: 100%;
-    margin: 100px;
+    margin: 50px;
     width: 30%;
     background: rgb(255, 255, 255);
     padding: 50px;
     text-align: center;
+    position: relative;
 }
-input[type="text"], input[type="password"] {
+/* input[type="text"], input[type="password"] {
     border-radius: 10px;
     border: 2px solid #aaa;
     outline: none;
@@ -115,7 +117,7 @@ input[type="text"], input[type="password"] {
 input[type="text"]:focus, input[type="password"]:focus {
     border-color: rgb(173, 107, 199);
     box-shadow: 0 0 9px 0 rgb(173, 107, 199);
-}
+} */
 
 button {
     color: rgb(255, 255, 255);
@@ -188,7 +190,6 @@ main{
     flex-direction: row;
     justify-content: space-between;
     padding: 15px;
-    margin-top: 20px;
 }
 .grey-box {
     padding: 20px;
@@ -197,6 +198,7 @@ main{
     display: flex;
     justify-content: space-between;
     height: auto;
+    margin-bottom: 20px;
 }
 .right{
     width: 30%;
@@ -211,4 +213,17 @@ h2{
 }
 p{
     font-size: 20px;
+}
+
+.parallax img:nth-child(1){
+    top: 550px;
+    left: 50px;
+    position: absolute;
+    z-index: -1;
+}
+.parallax img:nth-child(2){
+    top: 800px;
+    left: 900px;
+    position: absolute;
+    z-index: -1;
 }
