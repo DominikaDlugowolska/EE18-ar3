@@ -200,7 +200,7 @@ main{
     height: auto;
     margin-bottom: 20px;
 }
-.right{
+.right-date-box{
     width: 30%;
     border-left: solid rgb(163, 163, 163) 2px;
     text-align: left;
@@ -226,4 +226,8 @@ p{
     left: 900px;
     position: absolute;
     z-index: -1;
+}
+.wishing-well{
+    /* change class for form */
+    width: 100%;
 }
