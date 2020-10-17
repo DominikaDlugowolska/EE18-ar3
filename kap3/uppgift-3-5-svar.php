@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <<?php
+        <?php
         // Ta emot data från formuläret
         $belopp = $_POST["belopp"];
         $ranta = $_POST["ränta"];

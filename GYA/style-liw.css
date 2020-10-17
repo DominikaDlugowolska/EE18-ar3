@@ -12,13 +12,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 body {
     width: auto;
     height: auto;
-    background: #F6F6F6;
+    background-color: #F6F6F6;
 }
 header {
-    height: 100px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
+
 
 /* Top */
 .container{
@@ -26,11 +27,12 @@ header {
     background-color: #C26BFF;
     background-blend-mode: multiply;
     filter: brightness(70%);
+    transform: translateZ(-1px);
 }
-.container-top nav {
+nav {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 15px;
 }
 
 .container-bottom {
@@ -40,6 +42,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    
+    /* parallax */    
+    transform: translateZ(0);
+      
 }
 .vertical{
     display: flex;
@@ -47,22 +53,103 @@ header {
     align-items: center;
 }
 
-.container-top a {
+header a {
     text-decoration: none;
     cursor: pointer;
     color: rgb(218, 218, 218);
 }
-.container-top a:hover {
+header a:hover {
     cursor: pointer;
-    color: #fff;
 }
 
-.container-top ul li {
+header ul li {
     display: inline;
     font-size: 28px;
+    color: rgb(230, 227, 231);
     text-align: right;
     padding: 0 10px;
 }
+header ul li:hover {
+    display: inline;
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    text-align: right;
+    padding: 0 10px;
+}
+
+/* inloggning */
+.inloggningsBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(78, 76, 76, 0.5);
+    border-radius: 10px;
+}
+.inloggningsBox h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: purple;
+    text-align: center;
+}
+.inloggningsBox .inputBox {
+    position: relative;
+}
+.inloggningsBox .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    letter-spacing: 1px ;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+}
+.inloggningsBox .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    transition: .5s;
+}
+.inloggningsBox .inputBox input:focus ~ label, .inloggningsBox .inputBox input:valid ~ label {
+    top: -18px;
+    left: 0;
+    color: purple;
+    font-size: 12px;
+}
+.inloggningsBox input[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: purple;
+    background: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid purple;
+}
+
+.inloggningsBox input[type="submit"]:hover {
+    background-color: purple;
+    color: white;
+}
+
+
+
+/* header .meny {
+    padding: 0 10px 10px 900px;
+    margin-top: auto;
+} */
 
 h4 {
     font-size: 25px;
@@ -73,68 +160,69 @@ h4 {
     width: 100%;
     background: linear-gradient(0deg, rgba(105,1,133,1) 26%, rgba(182,19,153,1) 100%);
 }
-
+/* /*background-image: linear-gradient(-45deg,#dd0890 0,indigo 100%);
+ */
 h1 {
     font-size: 50px;
     color: white;
     text-align: center;
 
 }
-.container-top .nti {
-    display: block;
-}
 
 .info {
     font-size: 55px;
     color: rgb(76, 50, 95);
 }
-.main-container{
-    height: auto;
-    padding: 100px;
-}
-.login-box{
-    margin-top: 100px;
+ .box {
     box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(223, 223, 223);
-    height: 400px;
-    width: 500px;
-    background:white;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-}
-.login-box form{
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-}
-input[type = text]{
-    width: 90%;
-    padding:5px; 
-    border:2px solid #ccc; 
-    -webkit-border-radius: 5px;
-    border-radius: 20px;
-    margin-top: 10px;
-}
-.box {
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(200, 194, 204);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgb(183, 182, 184);
     height: 100%;
+    margin: 50px;
     width: 30%;
-    background: rgba(242, 157, 245, 0.24);
-    padding: 20px;
+    background: rgb(255, 255, 255);
+    padding: 50px;
     text-align: center;
+} 
+/*
+    input[type="text"], input[type="password"] {
+    border-radius: 10px;
+    border: 2px solid #aaa;
+    outline: none;
+    height: 27px;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 40px;
+    margin: 15px auto 7px auto;
+    box-sizing: border-box;
+    transition: 0.5s;
+    padding: 10px;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: rgb(173, 107, 199);
+    box-shadow: 0 0 9px 0 rgb(173, 107, 199);
+}
+button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(212, 162, 223);
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+button:hover {
+    border-color: rgb(173, 107, 199);
+    color: purple;
+    background-color: rgb(189, 93, 184);
 }
 h3 {
     font-size: 40px;
     color: red;
     margin: 50px 0 0 300px;
-}
+} */
+
+/* js */
 .ml1 {
     font-weight: 900;
     font-size: 4.5em;
@@ -177,4 +265,40 @@ main{
     height: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.box-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    margin-top: 20px;
+}
+.grey-box {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgb(207, 207, 207);
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 20px;
+}
+.right{
+    width: 30%;
+    border-left: solid rgb(163, 163, 163) 2px;
+    text-align: left;
+    padding: 5px;
+}
+h2{
+    color: black;
+    font-size: 30px;
+}
+p{
+    font-size: 20px;
+}
+
+.wishing-well{
+    /* change class for form */
+    width: 100%;
 }

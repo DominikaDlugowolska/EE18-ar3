@@ -10,8 +10,7 @@
     <header>
         <nav class="top">
             <div>
-                <a href="https://www.ntigymnasiet.se/stockholm/"><img id="nti" src="./bilder/nti-logo.svg"
-                        alt="nti"></a>
+                <a href="https://www.ntigymnasiet.se/stockholm/"><img id="nti" src="./bilder/nti-logo.svg" alt="nti"></a>
             </div>
             <ul class="meny">
                 <a href="index.html">
@@ -33,9 +32,25 @@
     <div class="table">
         <?php
 
-            for ($i = 0; $i < $lanetid; $i++) { 
-                $laneKostnad = $laneKostnad * ( 1 + $ranta / 100);
+        class Book
+        {
+            public $title;
+            public $author;
+            public $date;
+
+            public function __construct($title, $author, $date)
+            {
+                $this->title = $title;
+                $this->author = $author;
+                $this->date = $date;
             }
+        }
+        $books = [new Book("Bible", "William Bob", "20.20.20"), new Book("Bible", "William Bob", "20.20.20")];
+
+        foreach ($books as $value) {
+            
+        }
+        echo "<p>$books[1]</p>";
 
         ?>
         <div class="row">
@@ -44,7 +59,7 @@
             <div class="date">20.20.20</div>
         </div>
     </div>
-   
+
 
 
 
@@ -107,8 +122,8 @@
                 </div>
             </div>
             <div class="grey-box">
-                <form  class="wishing-well" action="#" method="POST">
-                    <input  class="wishing-well" type="text">
+                <form class="wishing-well" action="#" method="POST">
+                    <input class="wishing-well" type="text">
                 </form>
             </div>
         </div>
@@ -119,7 +134,7 @@
 
         /* lyssna på om man skrollar (scroll-hämdelsen) */
         window.addEventListener("scroll", function(e) {
-        
+
             /* Förflytta alla element: en efter en i en loop */
             eTargets.forEach(function(element) {
                 /* läs av data-rate för element */
