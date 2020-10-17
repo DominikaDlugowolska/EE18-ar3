@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Min-sida</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="./style/style2.css">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
                         alt="nti"></a>
             </div>
             <ul class="meny">
-                <a href="index.html">
+                <a href="index-liw.html">
                     <li>Startsida</li>
                 </a>
                 <a href="elev.html">
@@ -113,25 +113,6 @@
             </div>
         </div>
     </main>
-    <script>
-        /* element vi använder */
-        const eTargets = document.querySelectorAll(".scroll"); //är en lista på element, vi kallar listan för eTargets
-
-        /* lyssna på om man skrollar (scroll-hämdelsen) */
-        window.addEventListener("scroll", function(e) {
-        
-            /* Förflytta alla element: en efter en i en loop */
-            eTargets.forEach(function(element) {
-                /* läs av data-rate för element */
-                var rate = element.dataset.rate;
-                /* räkna en förflyttning */
-                var distance = window.pageYOffset * rate;
-
-                /* Flytta elementet */
-                element.style.transform = "translateY(" + distance + "px)";
-            });
-
-        });
-    </script>
+    <script src="./js/min-sida.js"></script>
 </body>
 </html>
