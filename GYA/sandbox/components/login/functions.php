@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// connect to database
+$db = mysqli_connect('localhost', 'root', '', 'test');
+
+// variable declaration
+$username = "";
+$email    = "";
+$errors   = array(); 
+
 // call the login() function if register_btn is clicked
 if (isset($_POST['login_btn'])) {
 	login();
