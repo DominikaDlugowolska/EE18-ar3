@@ -1,9 +1,7 @@
 <?php
 /*
-Skapa ett skript för beräkna kostnaden för att hyra bil hos en biluthyrningsfirma. 
-Startavgiften för att hyra bilen är 500:-, därefter kostar det ytterligare 5:-/km och 400:- för varje extra dag förutom den första. 
-Skriptet ska fråga hur många dagar man vill hyra bilen och hur många kilometer man vill köra.
-Skriptet ska sedan presentera den totala hyran.
+Skapa ett skript som ber användaren mata in lönen för 3 anställda. 
+Skriptet ska sedan presentera medellönen för personalen.
 *
 * PHP version 7
 * @category   
@@ -21,25 +19,30 @@ Skriptet ska sedan presentera den totala hyran.
 </head>
 <body>
     <div class="kontainer">
-        <h1>Hur bra är du i längd hopp?</h1>
+        <h1>Medellönet för personalen</h1>
+        <p>Ange lönet för tre anställda. </p>
         <form action="#" method="POST">
-            <label for="days">Ange antal dagar för uthyrning</label>
-            <input id="days" type="text" name="dagar">
-            <label for="km">Ange distans i kilometer</label>
-            <input id="km" type="text" name="kilometer">
+            <label for="one">Lön 1</label>
+            <input id="one" type="text" name="ett">
+            <br>
+            <label for="two">Lön 2</label>
+            <input id="two" type="text" name="tva">
+            <br>
+            <label for="three">Lön 3</label>
+            <input id="three" type="text" name="tre">
+            <br>
             <button type="submit">Räkna ut</button>
         </form>
         <?php
-        if (isset($_POST["dagar"], $_POST["kilometer"])) {
+        if (isset($_POST["ett"], $_POST["tva"], $_POST["tre"])) {
 
-            $antalDagar = $_POST["dagar"];
-            $antalKm = $_POST["kilometer"];
+            $lonEtt = $_POST["ett"];
+            $lonTva = $_POST["tva"];
+            $lonTre = $_POST["tre"];
 
-            $dagar = $antalDagar * 400;
-            $kilometer = $antalKm * 5;
-            $kostnad = 500 + $dagar + $kilometer;
+            $medellon = ($lonEtt + $lonTva + $lonTre) /3;
 
-            echo "<p>Du vill uthyra bilen för $antalDagar dagar och köra $antalKm km. Kostnaden kommer att bli $kostnad.</p>";
+            echo "<p>Medellönen för de tre anställda är " . round($medellon) . "kr.</p>";
         }
         ?>
     </div>

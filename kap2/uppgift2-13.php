@@ -1,7 +1,9 @@
 <?php
 /*
-Skapa ett skript som ber användaren mata in lönen för 3 anställda. 
-Skriptet ska sedan presentera medellönen för personalen.
+Skapa ett skript för beräkna kostnaden för att hyra bil hos en biluthyrningsfirma. 
+Startavgiften för att hyra bilen är 500:-, därefter kostar det ytterligare 5:-/km och 400:- för varje extra dag förutom den första. 
+Skriptet ska fråga hur många dagar man vill hyra bilen och hur många kilometer man vill köra.
+Skriptet ska sedan presentera den totala hyran.
 *
 * PHP version 7
 * @category   
@@ -19,16 +21,16 @@ Skriptet ska sedan presentera medellönen för personalen.
 </head>
 <body>
     <div class="kontainer">
-        <h1>Medellönet för personalen</h1>
+        <h1>Hur bra är du i längd hopp?</h1>
         <form action="#" method="POST">
-            <label for="one">Ange lönet för tre anställda</label>
-            <input id="one" type="text" name="ett">
-            <input id="two" type="text" name="tva">
-            <input id="three" type="text" name="tre">
+            <label for="days">Ange antal dagar för uthyrning</label>
+            <input id="days" type="text" name="dagar">
+            <label for="km">Ange distans i kilometer</label>
+            <input id="km" type="text" name="kilometer">
             <button type="submit">Räkna ut</button>
         </form>
         <?php
-        if (isset($_POST["ett"], $_POST["tva"], $_POST["tre"])) {
+        if (isset($_POST["dagar"], $_POST["kilometer"])) {
 
             $antalDagar = $_POST["dagar"];
             $antalKm = $_POST["kilometer"];
