@@ -7,7 +7,7 @@
 */
 
 $user = "domika";
-$db = "domika";
+$db = "labbar";
 $host = "localhost";
 $pass = "wZhVim6UuDnLzvw0";
 
