@@ -94,3 +94,15 @@ table tr:nth-child(odd) {
 table .fa {
     color: #55a5d2;
 }
+
+.nav-link .active{
+    background: rgb(173, 115, 115);
+}
+
+.inlägg{
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 2em;
+    background: rgb(241, 239, 227);
+}
