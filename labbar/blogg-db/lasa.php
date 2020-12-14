@@ -19,10 +19,11 @@ include "./resurser/conn.php";
 </head>
 <body>
     <div class="kontainer">
+    <h1>Min Blogg</h1>
         <nav>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" href="./lasa.php">Läsa</a></li>
-                <li class="nav-item"><a class="nav-link" href="./skriva.php">Skriva</a></li>
+                <li class="nav-item"><a class="nav-link" href="./admin/skriva.php">Skriva</a></li>
                 <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
             </ul>
         </nav>

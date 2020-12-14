@@ -6,7 +6,7 @@
  * @author     Dominika Dlugowolska <domi.dlugowolska@gmail.com>
  * @license    PHP CC
  */
-include "./resurser/conn.php";
+include "../resurser/conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -15,16 +15,16 @@ include "./resurser/conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogg</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="kontainer">
         <h1>Min Blogg</h1>
         <nav>
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./skriva.php">Skriva</a></li>
-                <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
+                <li class="nav-item"><a class="nav-link" href="../lasa.php">Läsa</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./admin/skriva.php">Skriva</a></li>
+                <li class="nav-item"><a class="nav-link" href="../sok.php">Sök</a></li>
             </ul>
         </nav>
         <form action="#" method="POST">
