@@ -12,13 +12,20 @@ include "./resurser/conn.php";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inloggning</title>
+    <title>Registrera</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="kontainer">
     <header>
+    <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" href="./lista.php">Lista</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./registrera.php">Registrera</a></li>
+                <li class="nav-item"><a class="nav-link" href="./login.php">Logga in</a></li>
+            </ul>
+        </nav>
     <h1>Inloggning</h1>
     </header>
     <main>
@@ -42,7 +49,12 @@ include "./resurser/conn.php";
     if($fnamn && $enamn && $anamn && $lösen1 && $lösen2) {
 
         // TODO Kontrollera att användaren inte redan finns
-
+        $sql_a = "SELECT anamn FROM user WHERE anamn='$anamn'";
+        $res_a = $conn->query($sql_a);
+        if ($res_a->num_rows > 0) {
+            echo "<p>Användarnamnet finns redan</p>";
+        }else{
+            
         // Kontrollera om lösenorden matchar
         if ($lösen1 == $lösen2) {
 
@@ -51,8 +63,8 @@ include "./resurser/conn.php";
 
             $sql = "INSERT INTO user (fnamn, enamn, anamn, hash) VALUES ('$fnamn', '$enamn', '$anamn', '$hash')";
 
-                        // Kör koden för att det ska fungera
-                        $conn->query($sql);
+            // Kör koden för att det ska fungera
+            $conn->query($sql);
 
             echo "<div class=\"alert alert-success\" role=\"alert\"><p>Användaren registrerad</p></div>";
 
@@ -62,6 +74,7 @@ include "./resurser/conn.php";
         } else {
             echo "<div class=\"alert alert-info\" role=\"alert\"><p>Lösenorden matchar inte, vg försök igen</p></div>";
         }
+    }
     }
     ?>
     </main>
