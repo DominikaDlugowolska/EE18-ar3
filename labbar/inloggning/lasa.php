@@ -50,11 +50,13 @@ include "./resurser/conn.php";
 
             // Presentera resultatet
             while ($rad = $result->fetch_assoc()) {
-                echo "<div class=\"inlägg\">";
+                echo "<div class=\"inlagg\">";
                 echo "<h5>$rad[header]</h5>";
-                echo "<h6>$rad[postDate]</h6>";
                 echo "<p>$rad[postText]</p>";
-                echo "<p>$rad[username]</p>";
+                echo "<div class=\"date\">";
+                echo "<div><p>$rad[username]</p></div>";
+                echo "<div><p>$rad[postDate]</p></div>";
+                echo "</div>";
                 echo "</div>";
             }
 

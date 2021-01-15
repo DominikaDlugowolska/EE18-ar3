@@ -93,6 +93,11 @@ h1 {
     margin: 0;
     text-shadow: 1px 1px 1px #5c5c5c;
 }
+h5 {
+    color: #555b6e;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
 
 table {
     width: 100%;
@@ -132,4 +137,10 @@ form img {
     padding: 2em;
     margin-bottom: 2em;
     border-radius: 5px;
+}
+.inlagg .date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(222, 235, 231);
 }

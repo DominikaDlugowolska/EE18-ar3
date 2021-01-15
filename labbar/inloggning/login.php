@@ -85,7 +85,7 @@ session_start();
 
                     // Skapa en sessionvariabel
                     $_SESSION["antal"] = $antal;
-                    $_SESSION["username"] = $rad["id"];
+                    $_SESSION["username"] = $rad["anamn"];
 
                     // Hoppa till sidan lista
                     header("Location: ./lista.php");
