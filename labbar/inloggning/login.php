@@ -21,14 +21,19 @@ session_start();
     <div class="kontainer">
         <header>
         <nav>
-        <nav>
-            <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs">  
+        <?php if (isset($_SESSION["anamn"])) { ?>
                 <li class="nav-item"><a class="nav-link" href="./lista.php">Lista</a></li>
-                <li class="nav-item"><a class="nav-link" href="./registrera.php">Registrera</a></li>
+                <li class="nav-item"><a class="nav-link" href="./logout.php">Logga ut</a></li>
+                <li class="nav-item"><a class="nav-link" href="./skriva.php">Skriva</a></li>
+            <?php } else { ?>
                 <li class="nav-item"><a class="nav-link active" href="./login.php">Logga in</a></li>
-            </ul>
-        </nav>
-        </nav>
+                <li class="nav-item"><a class="nav-link" href="./registrera.php">Registrera</a></li>
+                <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
+            <?php } ?>
+        </ul>
+    </nav>
             <h1>Inloggning</h1>
         </header>
     <main>
@@ -55,16 +60,38 @@ session_start();
                 echo "<p class=\"alert alert-warning\">Användaren fins inte.</p>";
             } else {
                 // Plocka hashet för användaren
+                //Detta är en array, hämtar all information. Behövs inte göra variabel 
+                //för varje liten grej så länge data inom dem inte ska ändras.
+                // Exempel är $row[id] på rad 84
                 $rad = $result->fetch_assoc();
                 $hash = $rad['hash'];
+                // var_dump($rad);
+                // exit;
 
                 // Kontrollera lösenordet (kommer ut true eller false ifall de matchar)
                 if (password_verify($lösen, $hash)) {
                     //inloggad
                     echo "<p class=\"alert alert-success\">Du är inloggad.</p>";
+
+                    // Skapa en sessionvariabel
                     $_SESSION["anamn"] = $anamn;
+
+                    // Räkna antal
+                    $antal =$rad["antal"] + 1;
+
+                    // Registrera ny inloggning
+                    $sql = "UPDATE user SET antal = '$antal' WHERE id = $rad[id]";
+                    $result = $conn->query($sql);
+
+                    // Skapa en sessionvariabel
+                    $_SESSION["antal"] = $antal;
+                    $_SESSION["username"] = $rad["id"];
+
+                    // Hoppa till sidan lista
+                    header("Location: ./lista.php");
+
                 } else {
-                    echo "<p class=\"alert alert-fail\">Lösenordet stämmer inte.</p>";
+                    echo "<p class=\"alert alert-warning\">Lösenordet stämmer inte.</p>";
                 }
             } 
         }

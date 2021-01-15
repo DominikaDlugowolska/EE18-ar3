@@ -13,14 +13,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 body {
-    background: url("./bilder/georg-bommeli-ybtUqjybcjE-unsplash.jpg") top center no-repeat;
+    /* background: url("./bilder/georg-bommeli-ybtUqjybcjE-unsplash.jpg") top center no-repeat; */
 }
 .kontainer {
     width: 700px;
     padding: 2em;
     margin: 1em auto;
     min-height: 89vh;
-    background: #ddbea9;
+    background: #52796f;
     border-radius: 5px;
     font-family: 'Roboto Slab', serif;
     border: 1px solid #a0a0a0;
@@ -28,11 +28,17 @@ body {
 }
 nav {
     padding: 1em 0;
+    color: #363b4e;
 }
 main {
     padding: 1em;
     font-size: 0.9em;
-    color: #7b7b7b;
+    color: #555b6e;
+}
+
+nav .anamn {
+    margin-left: auto;
+    color: #bee3db;
 }
 
 form {
@@ -68,9 +74,8 @@ form button {
     border: none;
     font-weight: bold;
     color: #FFF;
-    background-color: #55a5d2;
+    background-color: #555b6e;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
@@ -79,8 +84,11 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, p {
     margin: 0.8em 0;
 }
+a {
+    color: #2f3442;
+}
 h1 {
-    color: #ffffff;
+    color: #cad2c5;
     font-size: 3em;
     margin: 0;
     text-shadow: 1px 1px 1px #5c5c5c;
@@ -89,8 +97,8 @@ h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #b89e44;
-    background: #ffffffa3;
+    border: 1px solid #000000;
+    background: #f3cccca3;
     padding: 2em;
     border-radius: 5px;
 }
@@ -99,15 +107,15 @@ th, td {
     text-align: left;
 }
 th {
-    background: #FFF;
+    background: #84a98c;
     padding: 1em 0.5em;
 }
 tr:nth-child(even) {
-    background: #f1f1f1;
+    background: #cad2c5;
 }
-/* tr:nth-child(odd) {
-    background: #FFF;
-} */
+tr:nth-child(odd) {
+    background :#f2e9e4;
+} 
 table .fa {
     color: #55a5d2;
 }

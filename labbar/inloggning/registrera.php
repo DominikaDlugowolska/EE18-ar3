@@ -20,12 +20,20 @@ include "./resurser/conn.php";
     <div class="kontainer">
     <header>
     <nav>
-            <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs">  
+            <!-- bestäm vad som syns och inte syns när man är inloggad-->           
+            <?php if (isset($_SESSION["anamn"])) { ?>
                 <li class="nav-item"><a class="nav-link" href="./lista.php">Lista</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./registrera.php">Registrera</a></li>
+                <li class="nav-item"><a class="nav-link" href="./logout.php">Logga ut</a></li>
+                <li class="nav-item"><a class="nav-link" href="./skriva.php">Skriva</a></li>
+            <?php } else { ?>
                 <li class="nav-item"><a class="nav-link" href="./login.php">Logga in</a></li>
-            </ul>
-        </nav>
+                <li class="nav-item"><a class="nav-link active" href="./registrera.php">Registrera</a></li>
+                <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
+            <?php } ?>
+        </ul>
+    </nav>
     <h1>Inloggning</h1>
     </header>
     <main>
@@ -74,6 +82,7 @@ include "./resurser/conn.php";
         } else {
             echo "<div class=\"alert alert-info\" role=\"alert\"><p>Lösenorden matchar inte, vg försök igen</p></div>";
         }
+        
     }
     }
     ?>
