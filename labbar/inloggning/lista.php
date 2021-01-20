@@ -54,16 +54,18 @@ if (!isset($_SESSION["anamn"])) {
         if (!$result) {
             die("Något blev fel med SQL-satsen." . $conn->error);
         } else {
-            echo "<p class=\"alert alert-success\" role=\"alert\">Hittade " .  $result->num_rows . " användare.</p>";
+            echo "<p class=\"alert alert-success\" role=\"alert\">Hittade " . $result->num_rows . " användare.</p>";
         }
 
         echo "<table>";
         echo "<tr>
-                <th>Gånger inloggad</th>
+                <th>Inloggad</th>
                 <th>Förnamn</th>
                 <th>Efternamn</th>
-                <th>Användarnamn</th>
+                <th>Användare</th>
                 <th>Skapad</th>
+                <th></th>
+                <th></th>
             </tr>";
         // Presentera resultatet
         while ($rad = $result->fetch_assoc()) {
@@ -73,6 +75,8 @@ if (!isset($_SESSION["anamn"])) {
             echo "<td>$rad[enamn]</td>";
             echo "<td>$rad[anamn]</td>";
             echo "<td>$rad[skapad]</td>";
+            echo "<td><a class=\"btn btn-outline-danger\" href=\"radera-db.php?id={$rad['id']}\">Radera</a></td>";
+            echo "<td><a class=\"btn btn-outline-warning\" href=\"redigera-db.php?id={$rad['id']}\">Redigera</a></td>";
             echo "</tr>";
         }
         echo "</table>";

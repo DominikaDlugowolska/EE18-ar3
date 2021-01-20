@@ -65,8 +65,8 @@ session_start();
                 // Exempel är $row[id] på rad 84
                 $rad = $result->fetch_assoc();
                 $hash = $rad['hash'];
-                // var_dump($rad);
-                // exit;
+                //var_dump($rad);
+                //exit;
 
                 // Kontrollera lösenordet (kommer ut true eller false ifall de matchar)
                 if (password_verify($lösen, $hash)) {
@@ -85,7 +85,7 @@ session_start();
 
                     // Skapa en sessionvariabel
                     $_SESSION["antal"] = $antal;
-                    $_SESSION["username"] = $rad["anamn"];
+                    $_SESSION["user_id"] = $rad["id"];
 
                     // Hoppa till sidan lista
                     header("Location: ./lista.php");

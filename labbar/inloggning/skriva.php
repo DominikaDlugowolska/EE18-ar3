@@ -56,7 +56,7 @@ if (!isset($_SESSION["anamn"])) {
         if ($header && $postText) {
 
             // SQL-satsen
-            $sql = "INSERT INTO post (header, postText, username) VALUES ('$header', '$postText', '$_SESSION[username]')";
+            $sql = "INSERT INTO post (header, postText, user_id) VALUES ('$header', '$postText', '$_SESSION[user_id]')";
 
             $result = $conn->query($sql);
 

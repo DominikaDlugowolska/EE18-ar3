@@ -38,7 +38,7 @@ include "./resurser/conn.php";
         <div>
             <?php
             // 2. Ställ en SQL-fråga
-            $sql = "SELECT * FROM post";
+            $sql = "SELECT post.header, post.postText, post.postDate, user.fnamn, user.enamn, user.anamn FROM post JOIN user ON post.user_id=user.id ORDER BY postDate DESC";
             $result = $conn->query($sql);
 
             // Gick det bra?
@@ -54,11 +54,11 @@ include "./resurser/conn.php";
                 echo "<h5>$rad[header]</h5>";
                 echo "<p>$rad[postText]</p>";
                 echo "<div class=\"date\">";
-                echo "<div><p>$rad[username]</p></div>";
+                echo "<div><p>$rad[anamn]</p></div>";
                 echo "<div><p>$rad[postDate]</p></div>";
                 echo "</div>";
                 echo "</div>";
-            }
+            } 
 
             $conn->close;
 
