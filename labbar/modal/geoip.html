@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kontainer">
+
+    </div>
+    <script>
+        function visaLand() {
+            // vi skall göra ett anrop mot https://ip-api.com/
+            fetch("http://ip-api.com/json")   //hämta 
+            .then(response => response.json()) // packa upp paketet
+            .then(data => {                   // nu gör vi något...
+                console.log(data.country);     // vilket land är besökaren ifrån
+                console.log(data.city);     // vilket land är besökaren ifrån
+            })
+        }
+
+        // kallar fram funktionen, inget händer utan det
+        visaLand();
+    </script>
+</body>
+</html>
