@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Points on a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id='map'></div>
+    <script>
+        // Min personliga access
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZG9taWluIiwiYSI6ImNrbTYxeWtvMTBqeXEybm53Z3plbzAwbDkifQ.VokzllGR2jJqdrgbjLIgsQ';
+
+        // Skapa karta
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/domiin/ckm1xho0e60j317t8hgg4wzgk', // replace this with your style URL
+            center: [18.0649, 59.33258],
+            zoom: 9
+        });
+        var popupHem = new mapboxgl.Popup({offset: 25})
+        .setHTML('<h3>Tumba</h3><p>Här bor jag 🤠</p>');
+
+        var popupSkola = new mapboxgl.Popup({offset: 25})
+        .setHTML('<h3>Odenplan</h3><p>Här ligger NTI Gymnasiet<img src="./nti.png" alt="NTI"></p>');
+
+        var popupLiwia = new mapboxgl.Popup({offset: 25})
+        .setHTML('<h3>Skärholmen</h3><p>Här bor Liwia</p>');
+        // Infoga en marker på kartan
+        var hemma = new mapboxgl.Marker()
+            .setLngLat([17.844477, 59.194746])
+            .setPopup(popupHem)
+            .addTo(map);
+
+        // Här är skolan   
+        var skolan = new mapboxgl.Marker()
+            .setLngLat([18.046671, 59.337428])
+            .setPopup(popupSkola)
+            .addTo(map);
+
+        // Här är apan   
+        var liwia = new mapboxgl.Marker()
+            .setLngLat([17.896252, 59.277485])
+            .setPopup(popupLiwia)
+            .addTo(map);
+    </script>
+</body>
+</html>
