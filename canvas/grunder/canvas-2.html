@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas grunder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        // rita ut en bild
+        // steg 1: ladda in bilden
+        var bild1 = new Image();
+        var bild2 = new Image();
+        bild1.src = "./mushroom.jpg";
+        bild2.src = "./grogu.png";
+       
+        // animationsloopen
+        var x1 = 0, y1 = 0;
+        var x2 = 0, y2 = 300;
+        function loopen() {
+            // sudda ut canvas innan nya bilden ritas ut
+            ctx.clearRect(0, 0, 800, 600);
+            // ritar ut bilden
+            ctx.drawImage(bild1, x1, y1);
+            ctx.drawImage(bild2, x2, y2);
+            // ändra positionen i x-led
+            x1 += 3;
+            y1 += 1;
+            x2 += 3;
+            y2 -= 2;
+            console.log(x2, y2);
+            requestAnimationFrame(loopen);
+        }
+        loopen();
+        
+    </script>
+</body>
+</html>

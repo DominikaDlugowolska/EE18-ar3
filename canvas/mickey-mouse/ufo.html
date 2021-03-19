@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mickey Mouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        // ladda upp bild
+        var moon = new Image();
+        moon.src = "./moon.jpg";
+
+        function ritaMickeyMouse(x, y) {
+
+            // rita det beige
+           ctx.beginPath();
+            ctx.fillStyle = "#c7ecec";
+            ctx.ellipse(x - 20, y - 15, 40, 40, 16, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = "#b3fcff";
+            ctx.ellipse(x - 35, y - -30, 20, 10, 16, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#7d9993";
+            ctx.ellipse(x - 35, y - -30, 90, 55, 16, 0, 1 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#536863";
+            ctx.arc(x - 90, y - 2, 7, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#536863";
+            ctx.arc(x - 60, y - -6, 7, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#536863";
+            ctx.arc(x - 30, y - -16, 7, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#536863";
+            ctx.arc(x - 1, y - -25, 7, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+           ctx.fillStyle = "#536863";
+            ctx.arc(x - -30, y - -35, 7, 0, 2 * Math.PI);
+            ctx.fill();
+
+        }
+
+
+        // animation mha loopen
+        var musseX = 200, musseY = 200;
+        function loopen() {
+            // sudda ut canvas
+            ctx.clearRect(0, 0, 800, 600);
+
+            ctx.drawImage(moon, 0, 0);
+
+            ritaMickeyMouse(musseX, musseY);
+        
+            // ändra positionen
+            musseX += 2;
+            requestAnimationFrame(loopen);
+        }
+        loopen();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    background: #252424;
+}
+.kontainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+}
+canvas {
+    background: #fff url("./bakgrund.jpg");
+    margin: auto;
+    display: block;
+    /* cursor: none; */
+}
+aside {
+    background: rgb(109, 100, 100);
+    padding: 0.5em;
+    height: 42%;
+    margin: 10px 130px 0 0;
+}
+aside div {
+    border: 4px rgb(105, 124, 141) dashed;
+    font-size: 20px;
+    padding: 1em;
+    text-align: left;
+}
+aside div p{
+    color: rgb(122, 43, 43);
+    font-weight: bold;
+}

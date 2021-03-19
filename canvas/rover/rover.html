@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        // ladda bilderna
+        var rover = new Image();
+        rover.src = "./rover.png";
+        var roverX = 400;
+        var roverY = 500;
+
+        // lyssna på piltangenterna
+        window.addEventListener("keydown", function (e) {
+            console.log(e.key);
+            switch (e.key) {
+                case "ArrowRight":
+                    roverX += 1;
+                    break;
+                case "ArrowLeft":
+                    roverX -= 1;
+                    break;
+                case "ArrowUp":
+                    roverY += 1;
+                    break;
+                case "ArrowDown":
+                    roverY -= 1;
+                    break;
+                
+            }
+        })
+
+        // animations loopen
+        function loopen() {
+            ctx.clearRect(0, 0, 800, 600);
+
+            // rita ut rover
+            ctx.drawImage(rover, roverX, roverY, 100, 100);
+
+            webkitRequestAnimationFrame(loopen);
+        }
+        loopen();
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        function ritaSekunder() {
+            // vad är klockan nu?
+            var now = new Date();
+            var seconds = now.getSeconds();
+            var minutes = now.getMinutes();
+            //console.log(now.getSeconds());
+
+            ctx.beginPath();
+            ctx.strokeStyle = "#000";
+            ctx.lineWidth = 5;
+            ctx.arc(400, 300, 150, -Math.PI / 2, (2 * Math.PI - Math.PI / 2)/ 60 * seconds);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = "#84ad9e";
+            ctx.arc(400, 300, 80, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.strokeStyle = "#000";
+            ctx.lineWidth = 5;
+            ctx.arc(400, 300, 80, -Math.PI / 2, (2 * Math.PI - Math.PI / 2)/ 60 * minutes);
+            ctx.stroke();
+            
+        }
+
+
+        function loopen() {
+            // sudda ut canvas
+            ctx.clearRect(0, 0, 800, 600);
+
+            ritaSekunder();
+
+            requestAnimationFrame(loopen);
+        }
+        loopen();
+    </script>
+</body>
+</html>

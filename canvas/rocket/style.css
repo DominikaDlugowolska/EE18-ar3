@@ -1,0 +1,9 @@
+body {
+    background: rgb(225, 238, 229);
+}
+canvas {
+    border: 2px black solid;
+    background: rgb(170, 221, 206);
+    margin: auto;
+    display: block;
+}

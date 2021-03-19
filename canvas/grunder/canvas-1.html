@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas grunder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        // rita en rektangel
+        ctx.fillStyle = "white";
+        ctx.fillRect(300, 250, 200, 100);
+
+        // rita en tom fyrkant
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = "3";
+        ctx.strokeRect(100, 100, 50, 50);
+
+        // rita ut en bild
+        // steg 1: ladda in bilden
+        var bild = new Image();
+        bild.src = "./mushroom.jpg";
+        // steg 2: rita ut bilden
+        bild.addEventListener("load", function() {
+            ctx.drawImage(bild, 100, 300);
+        });
+        
+    </script>
+</body>
+</html>

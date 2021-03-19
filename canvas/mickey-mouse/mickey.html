@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mickey Mouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        // element vi använder
+        const eCanvas = document.querySelector("canvas");
+
+        // slå på ritmotorn
+        var ctx = eCanvas.getContext("2d");
+
+        function ritaMickeyMouse(x, y) {
+            
+            // rita huvudet som en hel cirkel
+            ctx.beginPath();
+            ctx.fillStyle = "#000";
+            ctx.arc(x, y, 100, 0, 2 * Math.PI);
+            ctx.fill();
+
+           
+
+            // rita öronen
+            ctx.beginPath();
+            ctx.fillStyle = "#000";
+            ctx.arc(x - 80, y - 100, 60, 0, 2 * Math.PI);
+            ctx.arc(x + 80, y - 100, 60, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // rita det beige
+           ctx.beginPath();
+            ctx.fillStyle = "#ebe1c3";
+            ctx.ellipse(x - 20, y - 20, 40, 60, 0, 0, 2 * Math.PI);
+            ctx.ellipse(x + 20, y - 20, 40, 60, 0, 0, 2 * Math.PI);
+            ctx.fill();
+
+           ctx.beginPath();
+            ctx.ellipse(x - 1, y - -30, 80, 70, 0, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // rita ögonen
+            ctx.beginPath();
+            ctx.fillStyle = "#FFF";
+            ctx.ellipse(x - 25, y - 20, 20, 35, 0, 0, 2 * Math.PI);
+            ctx.ellipse(x + 25, y - 20, 20, 35, 0, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = "#000";
+            ctx.ellipse(x - 25, y - 5, 15, 25, 0, 0, 2 * Math.PI);
+            ctx.ellipse(x + 25, y - 5, 15, 25, 0, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = "#FFF";
+            ctx.ellipse(x - 25, y - 15, 5, 5, 0, 0, 2 * Math.PI);
+            ctx.ellipse(x + 25, y - 15, 5, 5, 0, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+
+        // animation mha loopen
+        var musseX = 200, musseY = 200;
+        function loopen() {
+            // sudda ut canvas
+            ctx.clearRect(0, 0, 800, 600);
+
+            ritaMickeyMouse(musseX, musseY);
+        
+            // ändra positionen
+            musseX += 2;
+            requestAnimationFrame(loopen);
+        }
+        loopen();
+    </script>
+</body>
+</html>
