@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Snake Game</h1>
+        <h2>Time left: <span id="time-left">15</span></h2>
+        <div class="btnWrapper">
+            <button onclick="countdown()" id="startBtn">Click to start</button>
+            <button id="restartBtn">Restart Game</button>
+        </div>
+            <style>
+                canvas{
+                    display: block;
+                    margin: 0 auto;
+                }
+            </style>
+            <canvas id="snake" width="608" height="608"></canvas>
+    </div>
+        <script src="snake2.js"></script> 
+</body>
+</html>

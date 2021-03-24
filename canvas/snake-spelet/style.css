@@ -1,0 +1,24 @@
+.container {
+    padding: 10px;
+}
+h1{
+    text-align: center;
+}
+button{
+    border: none;
+    background: rgb(236, 243, 237);
+    box-shadow: 5px 5px 5px 0 rgba(155, 155, 155, 0.473);
+    padding: 10px;
+    border-radius: 5px;
+    width: 10em;
+    margin-left: 10px;
+}
+.btnWrapper{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+canvas {
+    padding-top: 30px;
+}
