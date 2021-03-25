@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(167, 167, 167);
+}
+canvas {
+    display: block;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
