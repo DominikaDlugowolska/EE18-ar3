@@ -1,0 +1,14 @@
+.kontainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+}
+div {
+    padding: 0.5em;
+    margin-left: 0;
+}
+
+div p{
+    color: rgb(122, 43, 43);
+    font-weight: bold;
+}
