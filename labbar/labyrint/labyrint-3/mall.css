@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(70, 70, 70);
+}
+.kontainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+}
+div {
+    padding: 0.5em;
+    margin-left: 0;
+}
+
+div p{
+    color: rgb(122, 43, 43);
+    font-weight: bold;
+}
+canvas{
+    background-color: #fff;
+}
