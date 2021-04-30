@@ -1,18 +1,20 @@
 <?php
 // användarnamnet måste vara 6-12 tecken långt, stora o små bokstäver samt siffror
-function validateUsername()
+$resultat = "";
+function validateUsername($data)
 {
-    if (preg_match("/[a-zA-Z0-9]{6,12}/", $text)) {
-        echo "<p>&#10003; Innehåller a-z, 0-9, @ och -.</p>";
+    global $resultat;
+    if (preg_match("/[a-zA-Z0-9]{6,12}/", $data)) {
+        $resultat = "<p>&#10003; Innehåller a-z, 0-9, @ och -.</p>";
     } else {
-        echo "<p>&#10005; Innehåller INTE a-z, 0-9, @ och -.</p>";
+        $resultat = "<p>&#10005; Innehåller INTE a-z, 0-9, @ och -.</p>";
     }
 }
-function validatePassword()
+function validatePassword($data)
 {
     
 }
-function validateEmail()
+function validateEmail($data)
 {
     
 }
@@ -49,6 +51,9 @@ if ($username && $password && $email) {
         <h1>Create New User</h1>
         <form action="#" method="post">
             <label>Username: <input type="text" name="username"></label>
+            <?php
+                echo $resultat;
+            ?>
             <label>Password: <input type="password" name="password"></label>
             <label>Email: <input type="email" name="email"></label>
             <button>Submit</button>
