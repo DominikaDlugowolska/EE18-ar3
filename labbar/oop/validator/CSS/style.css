@@ -50,4 +50,8 @@ form button {
   color: #FFF;
   background-color: #55a5d2;
 }
+
+form p {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */
